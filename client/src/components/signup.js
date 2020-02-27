@@ -1,16 +1,44 @@
 import React from "react";
 
+import {
+  Container,
+  Col,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Button
+} from "reactstrap";
+
 const Signup = () => {
   return (
-    <div>
+    <Container>
       <h1>Signup</h1>
-      <form>
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
-        <br />
-        <button>Create Account</button>
-      </form>
-    </div>
+      <Form>
+        <Col>
+          <FormGroup>
+            <Label>Username</Label>
+            <Input
+              style={{ textAlign: "center", width: "600px", margin: "0 auto" }}
+              type="text"
+              placeholder="username"
+            />
+          </FormGroup>
+        </Col>
+        <Col>
+          <FormGroup>
+            <Label>Password</Label>
+            <Input
+              style={{ textAlign: "center", width: "600px", margin: "0 auto" }}
+              type="password"
+              placeholder="password"
+            />
+          </FormGroup>
+        </Col>
+
+        <Button>Create Account</Button>
+      </Form>
+    </Container>
   );
 };
 

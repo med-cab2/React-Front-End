@@ -16,7 +16,7 @@ function App() {
         <br />
         <Link to="/protected">Dashboard</Link>
         <Switch>
-          <ProtectedRoute exact path="/protected" component={Login} />
+          <ProtectedRoute exact path="/protected" />
           <Route path="/login" />
           <Route component={Login} />
         </Switch>
