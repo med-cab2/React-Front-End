@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Signup from "./signup";
 
@@ -39,7 +40,9 @@ const Login = () => {
         </Col>
         <Button>Login</Button>
       </Form>
-      <Signup />
+      <span>
+        Dont have an account? <Link to="/signup">Signup Here!</Link>{" "}
+      </span>
     </Container>
   );
 };
