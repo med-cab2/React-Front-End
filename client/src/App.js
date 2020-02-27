@@ -1,17 +1,27 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
 import "./App.css";
 
 //components
 import Login from "./components/login";
-import Signup from "./components/signup";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <div className="App">
-      Cannabis Cab
-      <Login />
-      <Signup />
-    </div>
+    <Router>
+      <div className="App">
+        <h1>Cannabis Cab</h1>
+        <Link to="/login">Login</Link>
+        <br />
+        <Link to="/protected">Dashboard</Link>
+        <Switch>
+          <ProtectedRoute exact path="/protected" component={Login} />
+          <Route path="/login" />
+          <Route component={Login} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

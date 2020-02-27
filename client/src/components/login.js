@@ -1,5 +1,7 @@
 import React from "react";
 
+import Signup from "./signup";
+
 const Login = () => {
   return (
     <div>
@@ -10,6 +12,7 @@ const Login = () => {
         <br />
         <button>Login</button>
       </form>
+      <Signup />
     </div>
   );
 };
