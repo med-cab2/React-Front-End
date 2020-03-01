@@ -1,3 +1,13 @@
+html,
+body,
+.App {
+  background-color: #427f50;
+}
+
+a {
+  color: white;
+}
+
 .App {
   text-align: center;
 }

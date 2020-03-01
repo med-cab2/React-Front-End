@@ -13,6 +13,13 @@ import {
   Button
 } from "reactstrap";
 
+const Styles = {
+  textAlign: "center",
+  width: "600px",
+  margin: "0 auto",
+  backgroundColor: "#f7f5e8"
+};
+
 const Login = () => {
   return (
     <Container>
@@ -21,21 +28,13 @@ const Login = () => {
         <Col>
           <FormGroup>
             <Label>Username</Label>
-            <Input
-              style={{ textAlign: "center", width: "600px", margin: "0 auto" }}
-              type="text"
-              placeholder="username"
-            />
+            <Input style={Styles} type="text" placeholder="username" />
           </FormGroup>
         </Col>
         <Col>
           <FormGroup>
             <Label>Password</Label>
-            <Input
-              style={{ textAlign: "center", width: "600px", margin: "0 auto" }}
-              type="password"
-              placeholder="password"
-            />
+            <Input style={Styles} type="password" placeholder="password" />
           </FormGroup>
         </Col>
         <Button>Login</Button>

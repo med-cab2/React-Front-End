@@ -7,17 +7,13 @@ import "./App.css";
 import Login from "./components/login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/signup";
+import Nav from "./components/nav-bar";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Cannabis Cab</h1>
-        <Link to="/login">Login</Link>
-        <br />
-        <Link to="/signup">Signup</Link>
-        <br />
-        <Link to="/protected">Dashboard</Link>
+        <Nav />
         <Switch>
           <ProtectedRoute exact path="/protected" />
           <Route path="/login" component={Login} />
