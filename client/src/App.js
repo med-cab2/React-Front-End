@@ -8,6 +8,7 @@ import Login from "./components/login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/signup";
 import Nav from "./components/nav-bar";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route component={Login} />
           <Route component={Signup} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

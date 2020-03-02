@@ -23,7 +23,7 @@ const Styles = {
 const Login = () => {
   return (
     <Container>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <Form>
         <Col>
           <FormGroup>

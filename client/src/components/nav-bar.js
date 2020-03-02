@@ -12,12 +12,13 @@ const NavCont = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+  border: solid 2px #8c6815;
 `;
 
 const Navbar = styled.nav`
   background-color: #184725;
   height: 200px;
-  width: 800px;
+  width: 795px;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;

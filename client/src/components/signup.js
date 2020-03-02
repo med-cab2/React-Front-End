@@ -20,7 +20,7 @@ const Styles = {
 const Signup = () => {
   return (
     <Container>
-      <h1>Signup</h1>
+      <h2>Signup</h2>
       <Form>
         <Col>
           <FormGroup>
