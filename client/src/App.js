@@ -7,9 +7,9 @@ import "./App.css";
 import Login from "./components/login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/signup";
-import Nav from "./components/nav-bar";
+import DashBoard from "./components/Dashboard/Dashboard";
 import Footer from "./components/footer";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Nav from "./components/nav-bar";
 
 function App() {
   return (
@@ -20,10 +20,10 @@ function App() {
           <ProtectedRoute exact path="/protected" />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/dashboard" component={DashBoard} />
           <Route component={Login} />
           <Route component={Signup} />
-          <Route component={Dashboard} />
+          <Route component={DashBoard} />
         </Switch>
         <Footer />
       </div>
