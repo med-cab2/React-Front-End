@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/signup";
 import Nav from "./components/nav-bar";
 import Footer from "./components/footer";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
           <ProtectedRoute exact path="/protected" />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route component={Login} />
           <Route component={Signup} />
+          <Route component={Dashboard} />
         </Switch>
         <Footer />
       </div>
