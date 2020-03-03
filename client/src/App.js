@@ -7,6 +7,7 @@ import "./App.css";
 import Login from "./components/login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/signup";
+import DashBoard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -18,10 +19,14 @@ function App() {
         <Link to="/signup">Signup</Link>
         <br />
         <Link to="/protected">Dashboard</Link>
+        <br />
+        {/* test link */}
+        <Link to="/dashboard">Dashboard test link</Link>
         <Switch>
           <ProtectedRoute exact path="/protected" />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/dashboard" component={DashBoard} />
           <Route component={Login} />
           <Route component={Signup} />
         </Switch>

@@ -1,10 +1,10 @@
-import react from 'react'
+import React from 'react'
 
 
 const Navigation = () => {
 
 
-  return(
+  return (
     <nav className="nav-wrap">
       <a href="#">Home</a>
       <a href="#">Strains</a>
