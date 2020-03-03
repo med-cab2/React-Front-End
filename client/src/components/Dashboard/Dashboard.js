@@ -6,14 +6,13 @@ import Header from "./Header/Header";
 import FavoriteStrain from "./StrainCard/FavoriteStrain";
 import Dropdown from "./Dropdown/Dropdown";
 import UserForm from "./UserForm/UserForm";
+import SavedStrain from "../SavedStrain";
 
 const DashBoard = () => {
   return (
     <div className="dashboard">
       <Header />
-      <Dropdown />
-      <FavoriteStrain />
-      <UserForm />
+      {SavedStrain !== null ? <UserForm /> : <FavoriteStrain />}
     </div>
   );
 };

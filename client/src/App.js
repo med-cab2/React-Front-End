@@ -17,13 +17,11 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
-          <ProtectedRoute exact path="/protected" />
+          <ProtectedRoute exact path="/protected" component={DashBoard} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/dashboard" component={DashBoard} />
           <Route component={Login} />
           <Route component={Signup} />
-          <Route component={DashBoard} />
         </Switch>
         <Footer />
       </div>

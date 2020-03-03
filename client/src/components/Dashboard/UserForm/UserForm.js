@@ -13,7 +13,7 @@ const Container = styled.div`
   width: 30%;
   display: flex;
   flex-flow: column;
-  background-color: aquamarine;
+  background-color: #f7f5e8;
   height: 100%;
   padding-bottom: 25px;
   border: 1px solid lightslategray;

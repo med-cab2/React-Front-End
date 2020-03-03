@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../images/Nevilles_Haze.jpg";
 
@@ -6,6 +6,7 @@ const StrainCard = styled.div`
   border: 1px solid lightslategray;
   width: 30%;
   margin: 20px auto;
+  background-color: #f7f5e8;
 `;
 
 const Image = styled.img`
@@ -13,7 +14,14 @@ const Image = styled.img`
   margin-top: 20px;
 `;
 
-const FavoriteStrain = () => {
+const FavoriteStrain = props => {
+  const [strain, setStrain] = useState([]);
+
+  const saveStrain = () => {
+    const addToSavedList = strain.addToSavedList;
+    addToSavedList(strain);
+  };
+
   return (
     <StrainCard>
       <Image src={img} />
@@ -45,7 +53,7 @@ const FavoriteStrain = () => {
         <li>Anxiety</li>
         <li>Headaches</li>
       </ul>
-      <button>Add to Saved</button>
+      <button onClick={saveStrain}>Add to Saved</button>
     </StrainCard>
   );
 };

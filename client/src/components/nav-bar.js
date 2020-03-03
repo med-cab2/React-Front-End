@@ -38,8 +38,6 @@ const Nav = () => {
         <br />
         <Link to="/dashboard">Dashboard</Link>
         <br />
-        <Link>Contact</Link>
-        <br />
         <Link to="/login">Login</Link>
         <br />
       </Navbar>
