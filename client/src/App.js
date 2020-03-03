@@ -8,20 +8,14 @@ import Login from "./components/login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./components/signup";
 import DashBoard from "./components/Dashboard/Dashboard";
+import Footer from "./components/footer";
+import Nav from "./components/nav-bar";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Cannabis Cab</h1>
-        <Link to="/login">Login</Link>
-        <br />
-        <Link to="/signup">Signup</Link>
-        <br />
-        <Link to="/protected">Dashboard</Link>
-        <br />
-        {/* test link */}
-        <Link to="/dashboard">Dashboard test link</Link>
+        <Nav />
         <Switch>
           <ProtectedRoute exact path="/protected" />
           <Route path="/login" component={Login} />
@@ -29,7 +23,9 @@ function App() {
           <Route path="/dashboard" component={DashBoard} />
           <Route component={Login} />
           <Route component={Signup} />
+          <Route component={DashBoard} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

@@ -1,3 +1,17 @@
+* {
+  font-family: Helvetica;
+}
+
+html,
+body,
+.App {
+  background-color: #427f50;
+}
+
+a {
+  color: white;
+}
+
 .App {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
