@@ -1,27 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import { Image, StrainCard, Paragraph, Button } from "./Style";
 import img from "../images/Nevilles_Haze.jpg";
-
-const StrainCard = styled.div`
-  border: 1px solid lightslategray;
-  width: 30%;
-  margin: 20px auto;
-`;
-
-const Image = styled.img`
-  width: 30%;
-  margin-top: 20px;
-`;
 
 const FavoriteStrain = () => {
   return (
     <StrainCard>
       <Image src={img} />
       <h2>Neville's Haze</h2>
-      <p>Type: Sativa</p>
+      <Paragraph>Type: Sativa</Paragraph>
       <p>Rating: 4</p>
       <p>Effects: Creative, Paranoia, Energetic</p>
-      <p>
+      <Paragraph>
         Description: Neville's Haze is a mostly Haze derived strain that won
         first place in the seeds division of the 1998 High Times Cannabis Cup.
         The Haze heritage leads to a strong Sativa style high that clouds the
@@ -36,8 +25,8 @@ const FavoriteStrain = () => {
         focus away from their cage of chronic pain. A few users have found
         reprieve from their restless nights of insomnia through Neville's Haze
         as well. The strain is also chosen to alleviate nausea and the effects
-        of glaucoma.{" "}
-      </p>
+        of glaucoma.
+      </Paragraph>
       <ul>
         Treats THESE AILMENTS
         <li>Nausea</li>
@@ -45,7 +34,7 @@ const FavoriteStrain = () => {
         <li>Anxiety</li>
         <li>Headaches</li>
       </ul>
-      <button>Add to Saved</button>
+      <Button>Add to Saved</Button>
     </StrainCard>
   );
 };
