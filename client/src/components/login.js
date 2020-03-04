@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import Signup from "./signup";
-
 import {
   Container,
   Col,
@@ -38,7 +36,7 @@ const Login = props => {
   const handleLogin = e => {
     e.preventDefault();
     axios
-      .post("https://strainiac.herokuapp.com/login", login)
+      .post("https://strainiac.herokuapp.com/auth/login", login)
       .then(res => {
         console.log(res);
         console.log(res.data.token);
@@ -46,7 +44,7 @@ const Login = props => {
         localStorage.setItem("username", login.username);
         props.history.push("/protected");
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err.message));
   };
 
   return (
