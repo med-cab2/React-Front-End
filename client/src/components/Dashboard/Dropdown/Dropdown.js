@@ -1,17 +1,18 @@
 import React from "react";
-import { withFormik, Form, Field } from "formik";
+import { withFormik, Field } from "formik";
+import { DropDownStyled } from "./Style";
 
 const DropDown = () => {
   return (
-    <Form>
-      <Field component="select" name="ailment-drop">
+    <>
+      <DropDownStyled component="select" name="ailment-drop">
         <option>Choose an Ailment</option>
         <option value="nausea">Nausea</option>
         <option value="anxiety">Anxiety</option>
         <option value="pain">Pain</option>
         <option value="insomnia">Insomnia</option>
-      </Field>
-    </Form>
+      </DropDownStyled>
+    </>
   );
 };
 

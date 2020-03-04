@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../images/Nevilles_Haze.jpg";
@@ -54,8 +55,26 @@ const FavoriteStrain = props => {
         <li>Headaches</li>
       </ul>
       <button onClick={saveStrain}>Add to Saved</button>
+=======
+import React from "react";
+import { Image, StrainCard, Paragraph, Button, H2 } from "./Style";
+import img from "../images/Nevilles_Haze.jpg";
+
+const RecommendedStrain = props => {
+  console.log(props.strain);
+  return (
+    <StrainCard>
+      <Image src={img} />
+      <H2>{props.strain.name}</H2>
+
+      <p>Aroma: {props.strain.aroma}</p>
+      <p>Qualities: {props.strain.qualities}</p>
+      <Paragraph>Description: {props.strain.description}</Paragraph>
+
+      <Button>Add to Saved</Button>
+>>>>>>> 80b2ce8ad695cc2ed49db162c36e4bd154270173
     </StrainCard>
   );
 };
 
-export default FavoriteStrain;
+export default RecommendedStrain;
