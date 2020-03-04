@@ -3,28 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import { Container, H2, TextArea, Button, H1, Image } from "./Style";
 import icon from "../../../logo/icon.png";
 import * as yup from "yup";
-<<<<<<< HEAD
-
-const NameField = styled(Field)`
-  height: 25px;
-  width: 50%;
-  margin: 5px;
-`;
-
-const Container = styled.div`
-  width: 30%;
-  display: flex;
-  flex-flow: column;
-  background-color: #f7f5e8;
-  height: 100%;
-  padding-bottom: 25px;
-  border: 1px solid lightslategray;
-
-  margin: 5px auto;
-`;
-=======
 import DropDown from "../Dropdown/Dropdown";
->>>>>>> 80b2ce8ad695cc2ed49db162c36e4bd154270173
 
 const UserForm = ({ touched, errors }) => {
   return (

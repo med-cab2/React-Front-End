@@ -34,14 +34,10 @@ const DashBoard = () => {
   return (
     <div className="dashboard">
       <Header />
-<<<<<<< HEAD
-      {SavedStrain !== null ? <UserForm /> : <FavoriteStrain />}
-=======
       {DummyData.map((strain, index) => (
         <RecommendedStrain strain={strain} key={index} />
       ))}
       <UserForm />
->>>>>>> 80b2ce8ad695cc2ed49db162c36e4bd154270173
     </div>
   );
 };
