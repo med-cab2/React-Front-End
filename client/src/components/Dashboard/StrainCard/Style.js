@@ -9,7 +9,7 @@ export const Image = styled.img`
 export const StrainCard = styled.div`
   border: 2px solid #8c6815;
   background-color: #f7f5e8;
-  width: 30%;
+  width: 20%;
   height: 100%;
   margin: 20px auto;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
@@ -34,4 +34,8 @@ export const Button = styled.button`
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
     font-weight: bold;
   }
+`;
+
+export const H2  = styled.h2`
+  margin: 20px;
 `;

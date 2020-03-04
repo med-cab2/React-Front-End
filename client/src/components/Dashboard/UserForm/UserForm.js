@@ -1,6 +1,7 @@
 import React from "react";
 import { withFormik, Form, Field } from "formik";
-import { Container, H2, TextArea, Button } from "./Style";
+import { Container, H2, TextArea, Button, H1, Image } from "./Style";
+import icon from "../../../logo/icon.png";
 import * as yup from "yup";
 import DropDown from "../Dropdown/Dropdown";
 
@@ -8,6 +9,8 @@ const UserForm = ({ touched, errors }) => {
   return (
     <Container className="form-container">
       <Form className="user-form">
+        <Image src={icon} />
+        <H1>Strainiac</H1>
         <H2>Fill out this form to get started!</H2>
         <DropDown />
         <br />
