@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Image, StrainCard, Paragraph, Button, H2 } from "./Style";
 import img from "../images/Nevilles_Haze.jpg";
 
+import StrainContext from "../../../contexts/StrainContext";
+
 const RecommendedStrain = props => {
-  console.log(props.strain);
+  const strains = useContext(StrainContext);
+  console.log("from favoritestrain.js", strains);
+
+  const saveStrain = () => {
+    const addToSavedList = strains.addToSavedList;
+    addToSavedList(strains.strain);
+  };
+
   return (
     <StrainCard>
       <Image src={img} />
@@ -13,7 +22,7 @@ const RecommendedStrain = props => {
       <p>Qualities: {props.strain.qualities}</p>
       <Paragraph>Description: {props.strain.description}</Paragraph>
 
-      <Button>Add to Saved</Button>
+      <Button onClick={saveStrain}>Add to Saved</Button>
     </StrainCard>
   );
 };

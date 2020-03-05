@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as yup from "yup";
 
 // components
@@ -6,34 +6,18 @@ import Header from "./Header/Header";
 import RecommendedStrain from "./StrainCard/FavoriteStrain";
 
 import UserForm from "./UserForm/UserForm";
+import SavedStrain from "../SavedStrain";
+import data from "../../dummyData";
 
-const DummyData = [
-  {
-    name: "Neville's Haze",
-    aroma: "Citrusy, Skunky",
-    qualities: "Pain Relief, Insomnia",
-    description: "Neville's Haze is a mostly Haze derived strain that won"
-  },
-  {
-    name: "Purple Haze",
-    aroma: "Citrusy, Fruity, Piney",
-    qualities: "Pain Relief, Insomnia, Nausea",
-    description: "Purple Haze is a mostly Haze derived strain that won"
-  },
-
-  {
-    name: "OG Haze",
-    aroma: "Citrusy, Fruity, Piney",
-    qualities: "Anxiety, Insomnia, Nausea",
-    description: "OG Haze is a mostly Haze derived strain that won"
-  }
-];
+import StrainContext from "../../contexts/StrainContext";
 
 const DashBoard = () => {
+  const strains = useContext(StrainContext);
+
   return (
     <div className="dashboard">
       <Header />
-      {DummyData.map((strain, index) => (
+      {data.map((strain, index) => (
         <RecommendedStrain strain={strain} key={index} />
       ))}
       <UserForm />

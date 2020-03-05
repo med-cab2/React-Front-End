@@ -36,9 +36,7 @@ const Nav = () => {
         <br />
         <Link>About Us</Link>
         <br />
-        <Link to="/dashboard">Dashboard</Link>
-        <br />
-        <Link>Contact</Link>
+        <Link to="/protected">Dashboard</Link>
         <br />
         <Link to="/login">Login</Link>
         <br />
