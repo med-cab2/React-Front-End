@@ -28,7 +28,7 @@ const UserForm = ({ touched, errors }) => {
           )}
         </label>
         <br />
-        <label>
+        {/* <label>
           Relief:
           <TextArea
             as="textarea"
@@ -40,7 +40,7 @@ const UserForm = ({ touched, errors }) => {
           {touched.relief && errors.relief && (
             <p className="errors">{errors.relief}</p>
           )}
-        </label>
+        </label> */}
         <br />
         <Button>Submit</Button>
       </Form>

@@ -6,12 +6,14 @@ const RecommendedStrain = props => {
   console.log(props.strain);
   return (
     <StrainCard>
-      <Image src={img} />
+      {/* <Image src={img} /> */}
       <H2>{props.strain.name}</H2>
-
-      <p>Aroma: {props.strain.aroma}</p>
-      <p>Qualities: {props.strain.qualities}</p>
-      <Paragraph>Description: {props.strain.description}</Paragraph>
+      <h5>Aroma</h5>
+      <Paragraph>{props.strain.aroma}</Paragraph>
+      <h5>Qualities</h5>
+      <Paragraph> {props.strain.qualities}</Paragraph>
+      <h5>Description</h5>
+      <Paragraph> {props.strain.description}</Paragraph>
 
       <Button>Add to Saved</Button>
     </StrainCard>

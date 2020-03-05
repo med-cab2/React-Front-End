@@ -36,6 +36,11 @@ export const Button = styled.button`
   }
 `;
 
-export const H2  = styled.h2`
+export const H2 = styled.h2`
   margin: 20px;
+  font-weight: bold;
+`;
+
+export const H5 = styled.h5`
+  font-weight: bold;
 `;
