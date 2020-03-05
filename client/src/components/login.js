@@ -11,6 +11,7 @@ import {
   Input,
   Button
 } from "reactstrap";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Styles = {
   textAlign: "center",
@@ -30,13 +31,13 @@ const Login = props => {
       ...login,
       [e.target.name]: e.target.value
     });
-    console.log("from login.js line 35", login);
+    console.log("from login.js line 34", login);
   };
 
   const handleLogin = e => {
     e.preventDefault();
-    axios
-      .post("https://strainiac.herokuapp.com/auth/login", login)
+    axiosWithAuth()
+      .post("/auth/login", login)
       .then(res => {
         console.log(res);
         console.log(res.data.token);
@@ -59,6 +60,8 @@ const Login = props => {
               type="text"
               placeholder="username"
               onChange={handleInput}
+              value={login.username}
+              name="username"
             />
           </FormGroup>
         </Col>
@@ -70,6 +73,8 @@ const Login = props => {
               type="password"
               placeholder="password"
               onChange={handleInput}
+              value={login.password}
+              name="password"
             />
           </FormGroup>
         </Col>
