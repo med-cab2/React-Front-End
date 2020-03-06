@@ -1,21 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import FavoriteStrain from "./Dashboard/StrainCard/FavoriteStrain";
+import StrainContext from "../contexts/StrainContext";
 
-class SavedStrain extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const SavedStrain = () => {
+  const { strain } = useContext(StrainContext);
 
-  render() {
-    return (
-      <div>
-        <h2>Saved Strains</h2>
-        {this.props.map(strain => {
-          return <FavoriteStrain key={strain.id} />;
-        })}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h2>Saved Strains</h2>
+      {strain.map(strain => {
+        return <FavoriteStrain key={strain.id} />;
+      })}
+    </div>
+  );
+};
 
 export default SavedStrain;

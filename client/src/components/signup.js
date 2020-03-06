@@ -40,8 +40,8 @@ const Signup = props => {
 
   const handleSignup = e => {
     e.preventDefault();
-    axios
-      .post("https://strainiac.herokuapp.com/auth/register", signup)
+    axiosWithAuth()
+      .post("/auth/register", signup)
       .then(res => {
         console.log(res);
         props.history.push("/login");
