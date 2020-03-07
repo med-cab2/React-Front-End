@@ -1,18 +1,31 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 import * as yup from "yup";
+import axios from "axios";
 
 // components
 import Header from "./Header/Header";
 import RecommendedStrain from "./StrainCard/FavoriteStrain";
-
 import UserForm from "./UserForm/UserForm";
-import SavedStrain from "../SavedStrain";
-import data from "../../dummyData";
-
-import StrainContext from "../../contexts/StrainContext";
 
 const DashBoard = () => {
-  const strains = useContext(StrainContext);
+  const [savedStrain, setSavedStrain] = useState([]);
+  const [data, setData] = useState([]);
+
+  const handleClick = () => {
+    setSavedStrain(savedStrain);
+  };
+
+  useEffect(() => {
+    axios
+      .get("https://strainiac.herokuapp.com/strains")
+      .then(response => {
+        console.log("from dashboard", response.data);
+        setData(response.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+  if (!data) return <h1 className="loading">Loading</h1>;
 
   return (
     <div className="dashboard">
