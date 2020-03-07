@@ -16,7 +16,6 @@ const DashBoard = () => {
 
   return (
     <div className="dashboard">
-      <Header />
       {data.map((strain, index) => (
         <RecommendedStrain strain={strain} key={index} />
       ))}
