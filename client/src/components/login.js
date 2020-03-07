@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { userContext } from "../contexts/userContext";
 
 import {
   Container,
@@ -11,7 +12,6 @@ import {
   Input,
   Button
 } from "reactstrap";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Styles = {
   textAlign: "center",
@@ -21,6 +21,7 @@ const Styles = {
 };
 
 const Login = props => {
+  const { setUser } = useContext(userContext);
   const [login, setLogin] = useState({
     username: "",
     password: ""
@@ -39,10 +40,8 @@ const Login = props => {
     axiosWithAuth()
       .post("/auth/login", login)
       .then(res => {
-        console.log(res);
-        console.log(res.data.token);
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("username", login.username);
+        localStorage.setItem("token", res.data.payload);
+        setUser(login.username);
         props.history.push("/protected");
       })
       .catch(err => console.log(err.message));
