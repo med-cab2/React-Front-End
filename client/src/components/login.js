@@ -61,6 +61,7 @@ const Login = props => {
               onChange={handleInput}
               value={login.username}
               name="username"
+              required
             />
           </FormGroup>
         </Col>
@@ -74,6 +75,7 @@ const Login = props => {
               onChange={handleInput}
               value={login.password}
               name="password"
+              required
             />
           </FormGroup>
         </Col>
