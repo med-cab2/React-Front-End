@@ -32,13 +32,11 @@ const Nav = () => {
       </a>
       <h1 style={{ color: "#8c6815" }}>Strainiac</h1>
       <Navbar>
-        <Link to="/login">Home</Link>
+        <a href="https://strainiacmeds.netlify.com/">Home</a>
         <br />
         <Link>About Us</Link>
         <br />
-        <Link to="/dashboard">Dashboard</Link>
-        <br />
-        <Link>Contact</Link>
+        <Link to="/protected">Dashboard</Link>
         <br />
         <Link to="/login">Login</Link>
         <br />
