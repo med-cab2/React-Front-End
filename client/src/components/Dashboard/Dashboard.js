@@ -4,8 +4,10 @@ import axios from "axios";
 
 // components
 import Header from "./Header/Header";
-import RecommendedStrain from "./StrainCard/FavoriteStrain";
+import RecommendedStrain from "./StrainCard/RecommendedStrain";
+
 import UserForm from "./UserForm/UserForm";
+import { FlexWrap, FlexWrapSaved } from "./DashStyle";
 
 // const DummyData = [
 //   {
@@ -30,12 +32,7 @@ import UserForm from "./UserForm/UserForm";
 // ];
 
 const DashBoard = () => {
-  const [savedStrain, setSavedStrain] = useState([]);
   const [data, setData] = useState([]);
-
-  const handleClick = () => {
-    setSavedStrain(savedStrain);
-  };
 
   useEffect(() => {
     axios
@@ -51,13 +48,13 @@ const DashBoard = () => {
 
   return (
     <div className="dashboard">
-      <Header />
-      {data.map((strain, index) => (
-        <RecommendedStrain strain={strain} key={index} />
-      ))}
+      <FlexWrap>
+        {data.map((strain, index) => (
+          <RecommendedStrain strain={strain} key={index} />
+        ))}
+      </FlexWrap>
       <UserForm />
     </div>
   );
 };
-
 export default DashBoard;
