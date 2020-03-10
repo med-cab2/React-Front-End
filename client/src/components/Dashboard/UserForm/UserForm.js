@@ -6,6 +6,10 @@ import * as yup from "yup";
 import DropDown from "../Dropdown/Dropdown";
 
 const UserForm = ({ touched, errors }) => {
+  const savedAlert = e => {
+    alert("Thank you for your submission!");
+  };
+
   return (
     <Container className="form-container">
       <Form className="user-form">
@@ -28,21 +32,7 @@ const UserForm = ({ touched, errors }) => {
           )}
         </label>
         <br />
-        {/* <label>
-          Relief:
-          <TextArea
-            as="textarea"
-            name="relief"
-            cols="45"
-            rows="5"
-            placeholder="Enter a brief description of your desired relief..."
-          />
-          {touched.relief && errors.relief && (
-            <p className="errors">{errors.relief}</p>
-          )}
-        </label> */}
-        <br />
-        <Button>Submit</Button>
+       <Button onClick={savedAlert}>Submit</Button>
       </Form>
     </Container>
   );

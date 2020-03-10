@@ -23,13 +23,3 @@ class SavedStrain extends React.Component {
 }
 
 export default SavedStrain;
-
-// return (
-//   <NavLink
-//     to={`/movies/${movie.id}`}
-//     key={movie.id}
-//     activeClassName="saved-active"
-//   >
-//     <span className="saved-movie">{movie.title}</span>
-//   </NavLink>
-// );
