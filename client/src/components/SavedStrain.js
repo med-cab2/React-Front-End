@@ -1,5 +1,6 @@
 import React from "react";
 import FavoriteStrain from "./Dashboard/StrainCard/FavoriteStrain";
+import { NavLink } from "react-router-dom";
 
 class SavedStrain extends React.Component {
   constructor(props) {
@@ -10,8 +11,12 @@ class SavedStrain extends React.Component {
     return (
       <div>
         <h2>Saved Strains</h2>
-        {this.props.map(strain => {
-          return <FavoriteStrain key={strain.id} />;
+        {this.props.list.map(strain => {
+          return (
+            <NavLink to={`/strain/${strain.id}`} key={strain.id}>
+              <span>{strain.name}</span>
+            </NavLink>
+          );
         })}
       </div>
     );
@@ -19,3 +24,13 @@ class SavedStrain extends React.Component {
 }
 
 export default SavedStrain;
+
+// return (
+//   <NavLink
+//     to={`/movies/${movie.id}`}
+//     key={movie.id}
+//     activeClassName="saved-active"
+//   >
+//     <span className="saved-movie">{movie.title}</span>
+//   </NavLink>
+// );

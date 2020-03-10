@@ -21,7 +21,7 @@ const Styles = {
 };
 
 const Login = props => {
-  const { setUser } = useContext(userContext);
+  //const { setUser } = useContext(userContext);
   const [login, setLogin] = useState({
     username: "",
     password: ""
@@ -40,8 +40,7 @@ const Login = props => {
     axiosWithAuth()
       .post("/auth/login", login)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
-        setUser(login.username);
+        localStorage.setItem("token", res.data.token);
         props.history.push("/protected");
       })
       .catch(err => console.log(err.message));
