@@ -1,24 +1,43 @@
 import React, { useState, useEffect } from "react";
+import * as yup from "yup";
 import axios from "axios";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 // components
 import Header from "./Header/Header";
-import RecommendedStrain from "./StrainCard/FavoriteStrain";
+import RecommendedStrain from "./StrainCard/RecommendedStrain";
+
 import UserForm from "./UserForm/UserForm";
-import SavedStrain from "../SavedStrain";
+import { FlexWrap, FlexWrapSaved } from "./DashStyle";
+
+// const DummyData = [
+//   {
+//     name: "Neville's Haze",
+//     aroma: "Citrusy, Skunky",
+//     qualities: "Pain Relief, Insomnia",
+//     description: "Neville's Haze is a mostly Haze derived strain that won"
+//   },
+//   {
+//     name: "Purple Haze",
+//     aroma: "Citrusy, Fruity, Piney",
+//     qualities: "Pain Relief, Insomnia, Nausea",
+//     description: "Purple Haze is a mostly Haze derived strain that won"
+//   },
+
+//   {
+//     name: "OG Haze",
+//     aroma: "Citrusy, Fruity, Piney",
+//     qualities: "Anxiety, Insomnia, Nausea",
+//     description: "OG Haze is a mostly Haze derived strain that won"
+//   }
+////////
+// ];
 
 const DashBoard = () => {
-  const [savedStrain, setSavedStrain] = useState([]);
   const [data, setData] = useState([]);
 
-  const addToSavedStrain = data => {
-    setSavedStrain([...savedStrain, data]);
-  };
-
   useEffect(() => {
-    axiosWithAuth()
-      .get("/strains")
+    axios
+      .get("https://strainiac.herokuapp.com/strains")
       .then(response => {
         console.log("from dashboard", response.data);
         setData(response.data);
@@ -30,18 +49,13 @@ const DashBoard = () => {
 
   return (
     <div className="dashboard">
-      <SavedStrain list={savedStrain} />
-      <Header />
-      {data.map(strain => (
-        <RecommendedStrain
-          addToSavedStrain={addToSavedStrain}
-          strain={strain}
-          key={strain.id}
-        />
-      ))}
+      <FlexWrap>
+        {data.map((strain, index) => (
+          <RecommendedStrain strain={strain} key={index} />
+        ))}
+      </FlexWrap>
       <UserForm />
     </div>
   );
 };
-
 export default DashBoard;

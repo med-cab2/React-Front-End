@@ -15,6 +15,9 @@ const RecommendedStrain = props => {
     addToSavedStrain(data.strain);
   };
 
+  const savedAlert = e => {
+    alert("Thank you for your submission!");
+
   return (
     <StrainCard>
       <Image src={img} />
@@ -24,7 +27,7 @@ const RecommendedStrain = props => {
       <p>Qualities: {props.strain.qualities}</p>
       <Paragraph>Description: {props.strain.description}</Paragraph>
 
-      <Button onClick={saveStrain}>Add to Saved</Button>
+      <Button onClick={savedAlert}>Add to Saved</Button>
     </StrainCard>
   );
 };

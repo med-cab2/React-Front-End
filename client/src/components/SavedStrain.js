@@ -10,7 +10,6 @@ class SavedStrain extends React.Component {
   render() {
     return (
       <div>
-        <h2>Saved Strains</h2>
         {this.props.list.map(strain => {
           return (
             <NavLink to={`/strain/${strain.id}`} key={strain.id}>
@@ -24,13 +23,3 @@ class SavedStrain extends React.Component {
 }
 
 export default SavedStrain;
-
-// return (
-//   <NavLink
-//     to={`/movies/${movie.id}`}
-//     key={movie.id}
-//     activeClassName="saved-active"
-//   >
-//     <span className="saved-movie">{movie.title}</span>
-//   </NavLink>
-// );

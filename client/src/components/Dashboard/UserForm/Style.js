@@ -6,7 +6,7 @@ export const H2 = styled.h2`
 `;
 
 export const Container = styled.div`
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-flow: column;
   background-color: #f7f5e8;
