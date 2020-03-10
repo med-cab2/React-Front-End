@@ -29,6 +29,7 @@ import { FlexWrap, FlexWrapSaved } from "./DashStyle";
 //     qualities: "Anxiety, Insomnia, Nausea",
 //     description: "OG Haze is a mostly Haze derived strain that won"
 //   }
+////////
 // ];
 
 const DashBoard = () => {
